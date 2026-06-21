@@ -1,0 +1,209 @@
+/* Global dark background with neon blue accents */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #0d1117 100%);
+  color: #e0e0e0;
+  font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+/* Neon scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #0d6efd;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #0d6efd;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0b5ed7;
+  box-shadow: 0 0 10px #0d6efd;
+}
+
+/* Cards with neon glow */
+.card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(13, 110, 253, 0.4), 0 8px 25px rgba(0, 0, 0, 0.6);
+  border-color: #0d6efd;
+}
+
+/* Form controls */
+.form-control, .form-select {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f1f5f9;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+.form-control:focus, .form-select:focus {
+  background-color: #0f172a;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.4);
+  color: #ffffff;
+}
+.form-control::placeholder {
+  color: #94a3b8;
+}
+
+/* Buttons with neon effect */
+.btn-primary {
+  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+  border: none;
+  border-radius: 40px;
+  padding: 10px 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #0b5ed7, #0a58ca);
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.8);
+}
+.btn-outline-primary {
+  border-radius: 40px;
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+  box-shadow: 0 0 10px #0d6efd;
+}
+.btn-outline-danger {
+  border-radius: 40px;
+}
+.btn-link {
+  color: #0d6efd;
+}
+.btn-link:hover {
+  text-shadow: 0 0 4px #0d6efd;
+}
+
+/* Navbar neon */
+.navbar {
+  background: #0a0a0a !important;
+  border-bottom: 2px solid #0d6efd;
+  box-shadow: 0 2px 20px rgba(13, 110, 253, 0.3);
+  backdrop-filter: blur(10px);
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, #fff, #0d6efd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+.nav-link {
+  font-weight: 500;
+  transition: 0.2s;
+}
+.nav-link:hover {
+  color: #0d6efd !important;
+  text-shadow: 0 0 5px #0d6efd;
+}
+
+/* Tables */
+.table {
+  color: #e2e8f0;
+  background-color: #0f172a;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.table thead th {
+  background-color: #1e293b;
+  border-bottom: 2px solid #0d6efd;
+}
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #1a1f2e;
+}
+.table-hover > tbody > tr:hover > * {
+  background-color: #2d3a5e;
+  transition: 0.2s;
+}
+
+/* Badges */
+.badge {
+  padding: 6px 12px;
+  font-weight: 500;
+  border-radius: 40px;
+}
+.bg-primary {
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  box-shadow: 0 0 4px #0d6efd;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 16px;
+  border-left: 5px solid;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+}
+.alert-info {
+  border-left-color: #0d6efd;
+  color: #aad4ff;
+}
+.alert-success {
+  border-left-color: #198754;
+  color: #aaffcc;
+}
+.alert-danger {
+  border-left-color: #dc3545;
+  color: #ffaaaa;
+}
+
+/* Progress bar neon */
+.progress {
+  background-color: #1e293b;
+  border-radius: 20px;
+  height: 10px;
+}
+.progress-bar {
+  background: linear-gradient(90deg, #0d6efd, #3b82f6);
+  border-radius: 20px;
+  box-shadow: 0 0 6px #0d6efd;
+}
+
+/* Links */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: 0.2s;
+}
+a:hover {
+  color: #60a5fa;
+  text-shadow: 0 0 4px #3b82f6;
+}
+
+/* Custom classes */
+.text-primary-glow {
+  color: #0d6efd;
+  text-shadow: 0 0 5px #0d6efd;
+}
+.bg-dark-card {
+  background: #0f172a;
+}
+.neon-border {
+  border: 1px solid #0d6efd;
+  box-shadow: 0 0 12px rgba(13, 110, 253, 0.3);
+}
