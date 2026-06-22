@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes.js';
-import feedbackRoutes from './routes/feedbackRoutes.js';
+import feedbackRoutes from './routes/FeedbackRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 
 dotenv.config();
