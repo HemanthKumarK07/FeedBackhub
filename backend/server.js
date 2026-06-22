@@ -14,8 +14,13 @@ app.use('/api/auth', authRoutes);
 app.use('/api/feedback', feedbackRoutes);
 app.use('/api/admin', adminRoutes);
 
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err));
+const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/feedbackhub';
+
+mongoose.connect(mongoUri)
+  .then(() => console.log(`MongoDB connected to ${mongoUri.startsWith('mongodb+srv://') ? 'Atlas cluster' : 'local MongoDB'}`))
+  .catch(err => {
+    console.error('MongoDB connection failed:', err.message);
+    process.exit(1);
+  });
 
 app.listen(process.env.PORT || 5000, () => console.log(` Backend on port ${process.env.PORT || 5000}`));
