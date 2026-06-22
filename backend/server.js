@@ -16,10 +16,17 @@ app.use('/api/admin', adminRoutes);
 
 const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/feedbackhub';
 
-mongoose.connect(mongoUri)
+mongoose.connect(mongoUri, {
+  autoIndex: true,
+  serverSelectionTimeoutMS: 10000,
+})
   .then(() => console.log(`MongoDB connected to ${mongoUri.startsWith('mongodb+srv://') ? 'Atlas cluster' : 'local MongoDB'}`))
   .catch(err => {
     console.error('MongoDB connection failed:', err.message);
+    if (mongoUri.startsWith('mongodb+srv://')) {
+      console.error('Check that your MONGODB_URI is a valid Atlas connection string and that DNS lookup is available.');
+      console.error('Example format: mongodb+srv://<user>:<pass>@cluster0.abcde.mongodb.net/<dbname>?retryWrites=true&w=majority');
+    }
     process.exit(1);
   });
 
