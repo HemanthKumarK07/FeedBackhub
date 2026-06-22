@@ -14,7 +14,12 @@ app.use('/api/auth', authRoutes);
 app.use('/api/feedback', feedbackRoutes);
 app.use('/api/admin', adminRoutes);
 
-const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/feedbackhub';
+const atlasUsername = process.env.MONGODB_USERNAME;
+const atlasPassword = process.env.MONGODB_PASSWORD;
+const atlasUri = process.env.MONGODB_URI;
+const mongoUri = atlasUri || (atlasUsername && atlasPassword
+  ? `mongodb+srv://${encodeURIComponent(atlasUsername)}:${encodeURIComponent(atlasPassword)}@feedbackhub.lfxyqjh.mongodb.net/feedbackhub?retryWrites=true&w=majority`
+  : 'mongodb://127.0.0.1:27017/feedbackhub');
 
 mongoose.connect(mongoUri, {
   autoIndex: true,
